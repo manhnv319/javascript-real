@@ -1,0 +1,2 @@
+Lưu ý về sử dụng this trong javascript
+- Khi this được khai báo trong hàm function bình thường thì nó có this riêng. Còn khi khai báo với arrow function thì không có this riêng => Không nên dùng để định nghĩa method trong object.
