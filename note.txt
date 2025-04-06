@@ -1,5 +1,5 @@
-Lưu ý về sử dụng this trong javascript
 - Khi this được khai báo trong hàm function bình thường thì nó có this riêng. Còn khi khai báo với arrow function thì không có this riêng => Không nên dùng để định nghĩa method trong object.
 
 - Callback là một hàm được truyền như tham số cho hàm khác và sẽ được gọi lại sau khi một hành đồng nào nó xảy ra. Hàm này sẽ được gọi laiij sau này, không phải lúc truyền.
 
+- Promise là một đối tượng đại diện cho kết quả tương lại của một hành động bất đồng bộ. Nó có 3 trạng thái pending, fulfilles, reject.
