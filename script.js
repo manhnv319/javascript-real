@@ -1,23 +1,22 @@
-async function myFunction() {
-    return "Hello, world!";
-}
+async function getUserAndPost(userId) {
+    try { 
+        const[userResponse, postsResponse] = await Promise.all([
+            fetch(`https://jsonplaceholder.typicode.com/users/${userId}`),
+            fetch(`https://jsonplaceholder.typicode.com/posts?userId=${userId}`)
+        ]);
 
-myFunction().then(result => {
-    console.log(result);
-})
-
-
-async function getUser() {
-    try{
-        const response = await fetch('https://jsonplaceholder.typicode.com/users/1')
-        if (!response.ok) {
-            throw new Error('Khong tim thay nguoi dunng');
+        if (!userResponse.ok || !postsResponse.ok) {
+            throw new Error("khong the lay du lieu");
         }
-        const user = await response.json();
-        console.log(user);
-    }catch (error) {
-        console.error('Error:', error);
+
+        const user = await userResponse.json();
+        const posts = await postsResponse.json();
+
+        console.log("Thong tin nguoi dung:", user);
+        console.log("Danh sach bai viet:", posts);
+    }catch(error) {
+        console.error("Loi:", error);
     }
 }
 
-getUser();
+getUserAndPost(1);
