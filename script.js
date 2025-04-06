@@ -1,11 +1,10 @@
-queueMicrotask(() => {
-    console.log("microtask queueMicrotask");
-});
+function sayHello(name) {
+    console.log("Hello " + name);
+}
 
-setTimeout(() => {
-    console.log("macrotask setTimeout");
-}, 0);
+function greetUser(callback) {
+    const name = "Manh";
+    callback(name);
+}
 
-Promise.resolve().then(() => {
-    console.log("microtask promise");
-})
+greetUser(sayHello);
