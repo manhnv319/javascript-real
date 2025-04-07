@@ -1,17 +1,19 @@
-async function fetchData(delay) {
-    return new Promise(resolve => setTimeout(() => resolve('Data fetched'), delay));
-}
+const title = document.getElementById("title");
+const button = document.getElementById('changeTextButton');
 
-async function fetchAllData() {
-    const dataSources = [fetchData(1000), fetchData(2000), fetchData(3000), fetchData(4000)];
-    // let dataCount = 0;
-    // for await (const data of dataSources) {
-    //     dataCount++;
-    //     console.log(data + dataCount);
-    // }
+const titleDefault = title.textContent;
+const titleDefaultColor = title.style.color;
 
-    const data = await Promise.all(dataSources);
-    console.log(data);
-}
+let isChanged = false;
 
-fetchAllData()
+button.addEventListener('click', function() {
+    if (isChanged) {
+        title.textContent = titleDefault;
+        title.style.color = titleDefaultColor;
+        isChanged = false;
+    } else {
+        title.textContent = "Text has been changed!";
+        title.style.color = "red";
+        isChanged = true;
+    }
+});
