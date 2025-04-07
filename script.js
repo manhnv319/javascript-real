@@ -1,22 +1,19 @@
-const student = {
-    name: "Manh",
-    scores: {
-        math: 90
-    }
-};
+const numbers = [1, 2, 3, 4, 5];
 
-console.log(student?.scores.math);
-console.log(student?.address?.city);
-console.log(student?.scores.english);
+// map
+const doubled = numbers.map(num => num * 2);
+console.log(doubled);
 
-// Nullish Coalescing
-const name = null;
-const defaultName = "Guest";
+// filter
+const evenNumbers = numbers.filter(num => num % 2 === 0);
+console.log(evenNumbers);
 
-console.log(name ?? defaultName);
+// reduce
+const sum = numbers.reduce((acc, num) => acc + num, 0);
+console.log(sum);
 
-const age = null;
-console.log(age ?? 25);
+// forEach
+numbers.forEach(num => {
+    console.log(num);
+})
 
-console.log(student?.address?.city === undefined ? "No city found" : student.address.city);
-console.log(student.name ?? "Manh");
