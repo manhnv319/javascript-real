@@ -1,16 +1,22 @@
-// Spread/Rest
 const student = {
-    id: 101,
-    nameStudent: "Manh",
+    name: "Manh",
     scores: {
-        math: 90,
-        english: 8
+        math: 90
     }
 };
 
-function printStudent({nameStudent, scores: {math}}) {
-    console.log(`Ten: ${nameStudent}, Toan: ${math}`)
-}
+console.log(student?.scores.math);
+console.log(student?.address?.city);
+console.log(student?.scores.english);
 
-printStudent(student);
+// Nullish Coalescing
+const name = null;
+const defaultName = "Guest";
 
+console.log(name ?? defaultName);
+
+const age = null;
+console.log(age ?? 25);
+
+console.log(student?.address?.city === undefined ? "No city found" : student.address.city);
+console.log(student.name ?? "Manh");

@@ -12,3 +12,6 @@
 
 - Rest/Spread syntax: Spread(...) - trải mẳng hoặc object ra. Rest(...) - gom phần còn lại.
 
+- Optional Chaining(?.): giúp truy cập các thuộc tính trong object hoặc gọi các phương thức mà không lo lỗi khi đối tượng không tồn tại(ví dụ là null hoặc undefined).
+
+- Nullish Coalescing(??): trả về giá trị đầu tiên nếu nó không phải null hoặc undefined. Nếu giá trị đầu tiên nulll hoặc undefined thì nó sẽ trả về giá trị thứ 2. Nullish colescing(??) chỉ kiểm tra null và undefined, còn phép hoặc(||) kiểm tra giá trị đầu tiên là falsy(false, 0, NaN, ", null, undefined) thì nó sẽ lấy giá trị thứ 2.
