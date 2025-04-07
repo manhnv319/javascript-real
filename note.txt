@@ -6,3 +6,4 @@
 
 - async/await: async là một từ khóa dùng để đánh giấu một hàm là hàm bất đồng bộ. Hàm bất đồng bộ luôn trả về một Promise, và giá trị trả về từ hàm này sẽ tự động được bọc trong một Promise. await chỉ có thể sử dụng trong hàm async. Nó giúp ta chờ đợi kết quả của một hàm Promise, và sau khi Promise hoàn thành, giá trị của Promise sẽ được trả về trực tiếp ko phải là một Promise nữa. Tính ưu viểt của async/await: dễ đọc, dễ hiểu; tránh callback hell do không phả lồng nhiều .then như khi sử dụng Promise thuần; quản lý dễ dang với try/catch để bắt lỗi.
 
+- ES6 Modules (import/export): tại sao cần module? Khi dự án lớn lên chúng ta cần tách code thành nhiều file để dễ bảo trì, tái sử dụng code ở nhiều nơi, tránh biến toàn cục bị trùng lặp. Lưu ý một file chỉ dùng được một export default, khi đã có default thì có thể đặt tên tùy ý khi import. Lưu ý khi dùng module thì phải dùng type="module" trong thể script của file html.
